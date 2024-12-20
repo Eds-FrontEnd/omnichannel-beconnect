@@ -1,0 +1,12 @@
+<div *ngIf="isChatVisible" class="chat-container">
+  <div *ngFor="let msg of messages">
+    <div class="chat-container__msg">
+      <p><small>{{ msg.timestamp | date: 'short' }}</small></p>
+      <strong>{{ msg.title }}:</strong> {{ msg.message }}
+    </div>
+  </div>
+</div>
+<div class="chat-container__text">
+  <textarea [(ngModel)]="editableMessage" placeholder="Digite sua mensagem aqui..."></textarea>
+  <button (click)="sendMessage()">Enviar</button>
+</div>

@@ -1,0 +1,15 @@
+<!-- popup.component.html -->
+<div *ngIf="show" class="popup-overlay">
+  <div class="popup-container">
+    <div class="popup-header">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="popup-body">
+      <p>{{ message }}</p>
+    </div>
+    <div class="popup-footer">
+      <!-- O botão usa o texto dinâmico (buttonText) fornecido -->
+      <button (click)="onClose()">{{ buttonText }}</button>
+    </div>
+  </div>
+</div>

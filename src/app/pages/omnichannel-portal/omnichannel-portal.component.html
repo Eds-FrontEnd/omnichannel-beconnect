@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="dashboard-container">
+  <div class="dashboard-grid">
+
+    <!-- Redes Sociais -->
+    <mat-card class="dashboard-card"[routerLink]="['/news']" >
+      <mat-icon class="dashboard-icon">share</mat-icon>
+      <h2>Redes Sociais</h2>
+    </mat-card>
+
+    <!-- Loja Virtual -->
+    <mat-card class="dashboard-card" [routerLink]="['/shop']">
+      <mat-icon class="dashboard-icon">shopping_cart</mat-icon>
+      <h2>Loja Virtual</h2>
+    </mat-card>
+
+    <!-- Chatbot -->
+    <mat-card class="dashboard-card" [routerLink]="['/register']">
+      <mat-icon class="dashboard-icon">home</mat-icon>
+      <h2>Cadastro</h2>
+    </mat-card>
+
+    <!-- Aplicativo -->
+    <mat-card class="dashboard-card" [routerLink]="['/contact']">
+      <mat-icon class="dashboard-icon">phone_android</mat-icon>
+      <h2>Contato</h2>
+    </mat-card>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,77 @@
+
+<div class="dark" *ngIf="cartOpen" (click)="toggleCart()"></div>
+<div class="cart" *ngIf="cartOpen">
+ <div class="cart-overlay" (click)="toggleCart()"></div>
+ <div class="cart-content">
+  <div class="cart-content__msg">
+    <h2>Carrinho</h2>
+    <div *ngIf="cartItems.length === 0">Seu carrinho está vazio.</div>
+  </div>
+   <div *ngFor="let item of cartItems">
+     <div class="cart-item">
+       <img [src]="item.image" alt="{{item.name}}" />
+       <div class="cart-item-info">
+
+         <!-- Botão de exclusão do item -->
+         <button (click)="removeFromCart(item.id)" class="remove-item">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+         <p>{{item.name}}</p>
+         <span>R$ {{item.price.toFixed(2).replace('.', ',')}}</span>
+         <div class="cart-item-quantity">
+           <button (click)="updateQuantity(item, -1)">-</button>
+           <span>{{item.quantity}}</span>
+           <button (click)="updateQuantity(item, 1)">+</button>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="cart-total" *ngIf="cartItems.length !== 0">
+     <p>Total: R$ {{totalPrice()}}</p>
+     <button class="checkout-button" (click)="payProducts(); sendSuccessMessage()">Finalizar Compra</button>
+   </div>
+ </div>
+</div>
+
+<main>
+
+  <app-header>
+  </app-header>
+  <div class="cart-icon" (click)="toggleCart()">
+    <mat-icon>{{ cartOpen ? 'close' : 'shopping_cart' }}</mat-icon>
+   </div>
+   <section class="black-friday-banner">
+     <h1>BLACK FRIDAY NA BEMOL!</h1>
+   </section>
+
+  <!-- Lista de produtos -->
+  <div class="shop">
+    <section class="product-list">
+      <div class="container">
+        <article class="product-item" *ngFor="let product of products">
+          <figure>
+            <img [src]="product.image" alt="{{product.name}}" />
+            <figcaption>
+              <div class="info">
+                <p><strong>{{product.name}}</strong></p>
+                <p>à vista R$ {{product.price.toFixed(2).replace('.', ',')}}</p>
+                <p>ou 10x sem juros de R$ {{product.installments.toFixed(2).replace('.', ',')}}</p>
+              </div>
+            </figcaption>
+          </figure>
+          <button (click)="addToCart(product); sendDoubtMessage()">Adicionar ao carrinho</button>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+<app-popup></app-popup>
+<div>
+
+<h3 class="title-chat">Chat - Loja Virtual</h3>
+  <!-- Passa as mensagens e títulos para o componente filho -->
+<app-chat [doubtMessage]="doubtMessage" [successMessage]="successMessage"
+            [doubtTitle]="doubtTitle" [successTitle]="successTitle"></app-chat>
+</div>
+

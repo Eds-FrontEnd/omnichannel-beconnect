@@ -1,0 +1,12 @@
+
+<app-header></app-header>
+
+  <div>
+    <h3 class="title-chat">Chat - Canal de Atendimento</h3>
+
+    <!-- Passa as mensagens e títulos para o componente filho -->
+    <app-chat [doubtMessage]="doubtMessage" [successMessage]="successMessage"
+              [doubtTitle]="doubtTitle" [successTitle]="successTitle"></app-chat>
+  </div>
+
+<app-footer></app-footer>

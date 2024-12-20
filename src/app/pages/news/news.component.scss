@@ -1,0 +1,155 @@
+// Estilo base para o corpo da página
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+// Container principal do layout
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+// Estilo para cada postagem
+.post {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+}
+
+// Estilo para os ícones de interação (curtir, comentar, compartilhar)
+.interaction-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 1rem;
+  color: #555;
+
+  div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    mat-icon {
+      margin-right: 8px;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: #006aff;
+    }
+
+    &:active mat-icon {
+      transform: scale(1.1);
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+}
+
+// Estilo para o contador de "curtir"
+.like span {
+  font-weight: bold;
+}
+
+// Estilo para o contador de "comentários"
+.comment span {
+  font-weight: normal;
+  color: #888;
+}
+
+// Estilo para o botão de "compartilhar"
+.share span {
+  font-weight: normal;
+  color: #888;
+}
+
+// Estilo da seção de comentários
+.comments-section {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #333;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 10px;
+    background-color: #f7f7f7;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Estilo para o botão de "comentar"
+.comment {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #888;
+
+  &:hover {
+    color: #006aff;
+  }
+}
+
+
+.info-social {
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+}

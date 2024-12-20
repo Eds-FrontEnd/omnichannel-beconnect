@@ -1,0 +1,43 @@
+<app-header></app-header>
+<main>
+  <div class="container">
+    <!-- Iteração para exibir as postagens -->
+    <section *ngFor="let post of posts" class="post">
+      <img [src]="post.image" alt="Post image" class="post-image">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+
+      <div class="interaction-icons">
+        <!-- Link de Curtir -->
+        <div class="like" (click)="changeLinkColor($event, post.id); sendSuccessMessage()">
+          <mat-icon>thumb_up</mat-icon> <span>{{ post.likeCount }}</span>
+        </div>
+
+        <!-- Link de Comentar -->
+        <div class="comment" (click)="commentPost(post.id); sendDoubtMessage()">
+          <mat-icon>comment</mat-icon> <span>{{ post.commentCount }} <span class="info-social">Comentários</span></span>
+        </div>
+
+        <!-- Link de Compartilhar -->
+        <div class="share" (click)="sharePost()">
+          <mat-icon>share</mat-icon> <span class="info-social">Compartilhar</span>
+        </div>
+      </div>
+
+      <!-- Exibe Comentários Criativos sobre Tecnologia -->
+      <div class="comments-section">
+        <ul>
+          <li *ngFor="let comment of post.comments">{{ comment }}</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+<app-footer></app-footer>
+
+<div  style="display: none;">
+  <h3 class="title-chat">Chat - Loja Virtual</h3>
+    <!-- Passa as mensagens e títulos para o componente filho -->
+  <app-chat [doubtMessage]="doubtMessage" [successMessage]="successMessage"
+              [doubtTitle]="doubtTitle" [successTitle]="successTitle"></app-chat>
+</div>

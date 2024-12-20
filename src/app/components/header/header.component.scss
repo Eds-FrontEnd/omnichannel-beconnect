@@ -1,0 +1,64 @@
+header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--white);
+  font-size: 14px;
+
+  @media screen and (max-width: 560px){
+    margin-top: 15px;
+  }
+
+  .menu {
+    ul {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        a {
+          color: var(--gray);
+          cursor: pointer;
+
+          &:hover {
+            color: var(--blue);
+          }
+        }
+      }
+    }
+  }
+
+  .login {
+    a {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      align-items: center;
+
+      color: var(--gray);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--blue);
+      }
+    }
+
+    button {
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      background-color: var(--white);
+      color: var(--blue);
+      cursor: pointer;
+
+      &:hover{
+        color: var(--gray);
+      }
+    }
+  }
+}

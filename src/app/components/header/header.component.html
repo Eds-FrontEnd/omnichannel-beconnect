@@ -1,0 +1,11 @@
+<header>
+  <app-logo></app-logo>
+  <div class="login">
+    <button *ngIf="isOmnichannel" (click)="onLoginClick()">
+      <mat-icon>exit_to_app</mat-icon> Sair
+    </button>
+    <button *ngIf="!isOmnichannel" [routerLink]="['/omnichannel']">
+      <mat-icon>arrow_back</mat-icon> Voltar
+    </button>
+  </div>
+</header>

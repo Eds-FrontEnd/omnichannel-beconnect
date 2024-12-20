@@ -1,0 +1,31 @@
+.home {
+  width: 100%;
+  height: auto;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    color: var(--blue);
+    text-align: center;
+    font-size: 23px;
+    margin-top: 12px;
+
+    @media screen and (max-width: 560px){
+      font-size: 17px;
+      margin: 12px;
+    }
+  }
+
+  .description {
+    text-align: center;
+    color: var(--gray);
+
+    @media screen and (max-width: 560px){
+      font-size: 13px;
+      margin: 10px 25px;
+    }
+  }
+}

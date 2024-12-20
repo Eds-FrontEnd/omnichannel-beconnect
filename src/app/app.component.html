@@ -1,0 +1,7 @@
+<!-- Spinner de carregamento -->
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="loading-spinner"></div>
+</div>
+
+<!-- Conteúdo da aplicação -->
+<router-outlet *ngIf="!isLoading"></router-outlet>
